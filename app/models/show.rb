@@ -26,8 +26,8 @@ class Show < ActiveRecord::Base
   end
   
   def self.popular_shows
-    shows = []
-    shows << self.where(':rating > ?', 5)
+    shows = self.where(':rating > ?', 5)
+    binding.pry
     shows
   end
 end
