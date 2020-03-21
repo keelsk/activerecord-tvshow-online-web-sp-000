@@ -20,4 +20,8 @@ class Show < ActiveRecord::Base
     show = Show.find_by(rating: rating)
     show
   end
+  
+  def ratings_sum
+    self.sum(:rating)
+  end
 end
