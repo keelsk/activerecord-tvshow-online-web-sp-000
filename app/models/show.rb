@@ -6,8 +6,8 @@ class Show < ActiveRecord::Base
   end
   
   def self.most_popular_show
-    song = self.highest_rating
-    binding.pry
+    rating = self.highest_rating
+    song Song.find_by(rating: 10)
     song.name
   end
 end
